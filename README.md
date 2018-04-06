@@ -1,7 +1,7 @@
 ember-store-helpers
 ==============================================================================
 
-[Short description of the addon.]
+This add-on provides helpers related to ember-data.
 
 Installation
 ------------------------------------------------------------------------------
@@ -14,7 +14,13 @@ ember install ember-store-helpers
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+``` hbs
+{{get (store/find-record 'user' 42) 'name'}}
+
+{{#each (store/find-all 'user') as |user|}}
+  {{user.name}}
+{{/each}}
+```
 
 
 Contributing
@@ -22,7 +28,7 @@ Contributing
 
 ### Installation
 
-* `git clone <repository-url>`
+* `git clone https://github.com/ember-sapporo/ember-store-helpers.git`
 * `cd ember-store-helpers`
 * `yarn install`
 
