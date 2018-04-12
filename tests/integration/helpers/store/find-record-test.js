@@ -27,11 +27,14 @@ module('Integration | Helper | store/find-record', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'takkanm');
   });
 
-  test('it returns null if id is null or undefined', async function(assert) {
+  test('it returns null if id is empty value', async function(assert) {
     await render(hbs`{{eq (store/find-record 'user' null) null}}`);
     assert.equal(this.element.textContent.trim(), 'true');
 
     await render(hbs`{{eq (store/find-record 'user' undefined) null}}`);
+    assert.equal(this.element.textContent.trim(), 'true');
+
+    await render(hbs`{{eq (store/find-record 'user' '') null}}`);
     assert.equal(this.element.textContent.trim(), 'true');
   });
 });
