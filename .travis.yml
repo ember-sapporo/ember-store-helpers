@@ -34,6 +34,9 @@ matrix:
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
+    # https://github.com/emberjs/ember-inflector/issues/142
+    - env: EMBER_TRY_SCENARIO=ember-beta
+
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
