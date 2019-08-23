@@ -29,6 +29,14 @@ Usage
 {{#each (store/find-all 'user') as |user|}}
   {{user.name}}
 {{/each}}
+
+{{#each (store/query-all 'user' (hash name='John')) as |john|}}
+  John at age {{user.age}}
+{{/each}}
+
+{{#let (store/query-record 'setting' (hash key='uniqueKey')) as |setting|}}
+  {{setting.name}}: {{setting.value}}
+{{/let}}
 ```
 
 
