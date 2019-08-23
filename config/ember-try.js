@@ -68,6 +68,7 @@ module.exports = async function() {
           }
         }
       }
-    ]
+    ],
+    useYarn: true
   };
 };
